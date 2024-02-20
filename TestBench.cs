@@ -1,23 +1,28 @@
 using BenchmarkDotNet.Attributes;
 
-[MemoryDiagnoser]
 public class MyBenchmark
 {
   [Benchmark]
-  public int Test1()
+  public string InstanceMethod()
   {
-    return int.MaxValue;
+    var name = DateTime.UtcNow.DayOfWeek.ToString();
+    var app = new MyAppBenchmark();
+    return app.Welcome(name);
   }
 
   [Benchmark]
-  public int Test2()
+  public string Reflection()
   {
-      return int.MaxValue;
+    var name = DateTime.UtcNow.DayOfWeek.ToString();
+    var app = new MyAppBenchmark();
+    return typeof(MyAppBenchmark)
+        .GetMethod("WelcomePrivate", BindingFlags.NonPublic | BindingFlags.Instance)
+        .Invoke(app, [name]) as string;
   }
+}
 
-  [Benchmark]
-  public int Test3()
-  {
-      return int.MaxValue;
-  }
+public sealed class MyAppBenchmark
+{
+  public string Welcome(string name)=> $"Welcome {name}";
+  private string WelcomePrivate(string name)=> $"Welcome {name}";
 }

@@ -7,9 +7,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-    <NoWarn>CS8625</NoWarn>
+    <NoWarn>CS8625,CS8601,CS8602,CS8603,CS8618</NoWarn>
+    
   </PropertyGroup>
-  
 
 
 
@@ -20,6 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="OtherLib\**" />
     <Compile Remove="_samples\**" />
+    <Compile Remove="zzTestBench.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="OtherLib\OtherLib.csproj" />
   </ItemGroup>
 </Project>
