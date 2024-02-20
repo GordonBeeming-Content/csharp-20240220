@@ -1,6 +1,6 @@
 namespace OtherLib;
 
-public interface IFromTheDarkSide
+public interface IWindow
 {
   string Name { get; }
 }

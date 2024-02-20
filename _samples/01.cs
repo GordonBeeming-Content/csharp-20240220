@@ -5,7 +5,10 @@ public class MyAppPublic
 }
 
 internal class MyAppInternal
-{  
+{
+  private class MyAppPrivate
+  {  
+  }  
 }
 
 #region no accesser defaults to internal

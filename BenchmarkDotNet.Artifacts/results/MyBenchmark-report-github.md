@@ -8,7 +8,7 @@ Apple M3 Max, 1 CPU, 14 logical and 14 physical cores
 
 
 ```
-|         Method |     Mean |    Error |   StdDev |  Gen 0 | Allocated |
-|--------------- |---------:|---------:|---------:|-------:|----------:|
-| InstanceMethod | 30.46 ns | 0.518 ns | 0.485 ns | 0.0095 |      80 B |
-|     Reflection | 60.62 ns | 1.231 ns | 1.152 ns | 0.0162 |     136 B |
+|         Method |     Mean |    Error |   StdDev |
+|--------------- |---------:|---------:|---------:|
+| InstanceMethod | 29.80 ns | 0.219 ns | 0.204 ns |
+|     Reflection | 61.93 ns | 0.623 ns | 0.552 ns |

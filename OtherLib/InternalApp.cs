@@ -1,6 +1,12 @@
 ﻿namespace OtherLib;
 
-internal sealed class InternalApp
+public class MyApp
 {
-  public string Welcome(string name) => $"Welcome {name} from the other side";
+  public IWindow GetApp() => new MagicWindow();
 }
+
+file class MagicWindow : IWindow
+{
+  public string Name => "file";
+}
+
